@@ -1,0 +1,5 @@
+type Health @model {
+  id: ID!
+  name: String!
+  description: String
+}

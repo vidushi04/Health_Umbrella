@@ -1,0 +1,12 @@
+{
+    "AppSyncApiName": "AmplifyAndroid",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognitoace80f4a",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "healthumbrella-20190425202438-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/2aa2812f6bd5c126ff2a1339be83ab4e8e2ea441"
+}

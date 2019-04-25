@@ -1,0 +1,112 @@
+type Health {
+  id: ID!
+  name: String!
+  description: String
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelHealthConnection {
+  items: [Health]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelHealthFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  description: ModelStringFilterInput
+  and: [ModelHealthFilterInput]
+  or: [ModelHealthFilterInput]
+  not: ModelHealthFilterInput
+}
+
+type Query {
+  getHealth(id: ID!): Health
+  listHealths(filter: ModelHealthFilterInput, limit: Int, nextToken: String): ModelHealthConnection
+}
+
+input CreateHealthInput {
+  id: ID
+  name: String!
+  description: String
+}
+
+input UpdateHealthInput {
+  id: ID!
+  name: String
+  description: String
+}
+
+input DeleteHealthInput {
+  id: ID
+}
+
+type Mutation {
+  createHealth(input: CreateHealthInput!): Health
+  updateHealth(input: UpdateHealthInput!): Health
+  deleteHealth(input: DeleteHealthInput!): Health
+}
+
+type Subscription {
+  onCreateHealth: Health @aws_subscribe(mutations: ["createHealth"])
+  onUpdateHealth: Health @aws_subscribe(mutations: ["updateHealth"])
+  onDeleteHealth: Health @aws_subscribe(mutations: ["deleteHealth"])
+}

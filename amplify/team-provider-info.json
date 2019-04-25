@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "healthumbrella-20190425202438-authRole",
+            "UnauthRoleArn": "arn:aws:iam::707082855962:role/healthumbrella-20190425202438-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::707082855962:role/healthumbrella-20190425202438-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "healthumbrella-20190425202438-deployment",
+            "UnauthRoleName": "healthumbrella-20190425202438-unauthRole",
+            "StackName": "healthumbrella-20190425202438",
+            "StackId": "arn:aws:cloudformation:us-east-1:707082855962:stack/healthumbrella-20190425202438/0db3c3f0-676a-11e9-a13e-12d7c29d9238"
+        },
+        "categories": {
+            "auth": {
+                "cognitoace80f4a": {}
+            }
+        }
+    }
+}

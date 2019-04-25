@@ -1,0 +1,52 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "healthumbrella-20190425202438-authRole",
+			"UnauthRoleArn": "arn:aws:iam::707082855962:role/healthumbrella-20190425202438-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::707082855962:role/healthumbrella-20190425202438-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "healthumbrella-20190425202438-deployment",
+			"UnauthRoleName": "healthumbrella-20190425202438-unauthRole",
+			"StackName": "healthumbrella-20190425202438",
+			"StackId": "arn:aws:cloudformation:us-east-1:707082855962:stack/healthumbrella-20190425202438/0db3c3f0-676a-11e9-a13e-12d7c29d9238"
+		}
+	},
+	"auth": {
+		"cognitoace80f4a": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/healthumbrella-20190425202438-deployment/amplify-cfn-templates/auth/cognitoace80f4a-cloudformation-template.yml",
+				"logicalId": "authcognitoace80f4a"
+			},
+			"lastPushTimeStamp": "2019-04-25T15:03:29.460Z",
+			"output": {
+				"AppClientSecret": "1ou5kagln58i6vu1v5v5vc73mbp4u9tc4kita752b5tb76qutimr",
+				"UserPoolId": "us-east-1_gpGs3krFh",
+				"AppClientIDWeb": "4i5kifh7rfcsv4h6iil7k8nbe1",
+				"AppClientID": "g63k12qa8phftd96b8q33en33",
+				"IdentityPoolId": "us-east-1:de329217-39a1-44e1-ae4f-cd5a37b90c4a",
+				"IdentityPoolName": "cognitoace80f4a_identitypool_ace80f4a__dev",
+				"UserPoolName": "cognitoace80f4a_userpool_ace80f4a"
+			},
+			"lastPushDirHash": "0j503Uxth08KzMG+TIdoMTyaEfs="
+		}
+	},
+	"api": {
+		"AmplifyAndroid": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "AMAZON_COGNITO_USER_POOLS",
+				"GraphQLAPIIdOutput": "qadyriglybb5vme67rtcynwyem",
+				"GraphQLAPIEndpointOutput": "https://kutw3crs4ze25n2tlcczdppuwa.appsync-api.us-east-1.amazonaws.com/graphql"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/healthumbrella-20190425202438-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiAmplifyAndroid"
+			},
+			"lastPushTimeStamp": "2019-04-25T15:03:29.460Z",
+			"lastPushDirHash": "W1tHDAmZ5Yb9uHnlaVZnrU5YfgM="
+		}
+	}
+}
